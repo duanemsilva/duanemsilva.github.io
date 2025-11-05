@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duane de Moura Silva | Desenvolvedor iOS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <style>
+        .vanta-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .carousel-container {
+            perspective: 1000px;
+        }
+        .carousel-item {
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+        }
+        .skill-pill {
+            transition: all 0.3s ease;
+        }
+        .skill-pill:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .app-card {
+            transition: all 0.3s ease;
+        }
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hide scrollbars for cleaner mobile carousels */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+    <div class="vanta-container" id="vanta-bg"></div>
+
+    <!-- Header -->
+    <header class="relative overflow-hidden py-20 bg-indigo-900 bg-opacity-90">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <p class="text-indigo-200 font-medium mb-2">Duane de Moura Silva | Desenvolvedor iOS</p>
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">Criando experiências digitais</h1>
+            <p class="text-xl text-indigo-100 max-w-2xl mx-auto mb-8">Desenvolvendo aplicativos iOS intuitivos que inspiram, educam e elevam</p>
+            
+            <nav class="flex justify-center space-x-6 flex-wrap">
+                <a href="#work" class="text-white hover:text-indigo-200 transition duration-300">
+                    <i data-feather="briefcase" class="inline mr-2"></i> Meus Projetos
+                </a>
+                <a href="#about" class="text-white hover:text-indigo-200 transition duration-300">
+                    <i data-feather="user" class="inline mr-2"></i> Sobre
+                </a>
+                <a href="#skills" class="text-white hover:text-indigo-200 transition duration-300">
+                    <i data-feather="code" class="inline mr-2"></i> Skills
+                </a>
+                <a href="#contact" class="text-white hover:text-indigo-200 transition duration-300">
+                    <i data-feather="mail" class="inline mr-2"></i> Contatos
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 container mx-auto px-4 py-12">
+
+        <!-- About Section -->
+        <section id="about" class="bg-white rounded-2xl shadow-xl p-8 mb-12 backdrop-blur-sm bg-opacity-90">
+            <h2 class="text-3xl font-bold text-indigo-600 mb-6 flex items-center">
+                <i data-feather="user" class="mr-3"></i> Sobre
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="md:col-span-2">
+
+                    <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                    Como desenvolvedor iOS, sempre busco excelência em minhas atuações, gerando valor em minhas entregas. Atuando como desenvolvedor iOS desde 2015, 
+                    contribui com a criação e manutenção de aplicativos nativos que já atingiram mais de <strong>260 mil downloads.</strong>
+                    <br>                 
+                    Tenho experiência sólida com Swift, SwiftUI. Com mais de 10 anos na área de tecnologia, meu objetivo é entregar soluções que realmente gerem valor — combinando qualidade técnica, boa arquitetura e foco total na experiência do usuário.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-indigo-50 rounded-lg p-4">
+                            <h3 class="font-semibold text-indigo-700 mb-2"><i data-feather="star" class="inline mr-2"></i> Foco</h3>
+                            <p class="text-gray-600">Desenvolvimento iOS com Swift e SwiftUI</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-indigo-200 shadow-lg">
+                        <img src="https://avatars.githubusercontent.com/u/152039306?v=4" alt="Noah Carpenter" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projetos Section -->
+        <section id="work" class="mb-12">
+            <h2 class="text-3xl font-bold text-indigo-600 mb-8 flex items-center">
+                <i data-feather="briefcase" class="mr-3"></i> Projetos
+            </h2>
+
+            <!-- Lição da Escola Sabatina -->
+            <div id="wordsage" class="app-card bg-white rounded-2xl shadow-xl overflow-hidden mb-8 backdrop-blur-sm bg-opacity-90">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="p-8">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-indigo-700 mb-2">Lição da Escola Sabatina</h3>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Swift</span>
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Xcode</span>
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">UIKit</span>
+                                </div>
+                            </div>
+                            <div class="bg-indigo-600 text-white px-4 py-2 rounded-lg">
+                                2015 - 2025
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-6">
+                            Aplicativo oficial que oferece estudos bíblicos diários com leitura, anotações e acesso direto aos versos mencionados. Inclui comentários de Ellen G. White, guia do professor, informativo missionário e áudios da lição e versos do Reavivados por Sua Palavra, reunidos em uma experiência moderna e intuitiva.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-green-500 mr-2 mt-0.5"></i>
+                                <span>Leitor com marcação, e anotações</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-green-500 mr-2 mt-0.5"></i>
+                                <span>Conteúdo em aúdio</span>
+                            </li>
+                        </ul>
+                        <a href="https://apps.apple.com/us/app/li%C3%A7%C3%A3o-da-escola-sabatina/id518393395" target="_blank" class="inline-flex items-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300">
+                            <i data-feather="download" class="mr-2"></i> Download na App Store
+                        </a>
+                    </div>
+                    <div class="carousel-container relative h-96 md:h-auto">
+                        <!-- Carousel Arrows -->
+                        <button aria-label="Previous screenshot" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-70 hover:bg-opacity-90 rounded-full p-2 shadow-md transition duration-200 focus:outline-none" style="margin-left: 0.5rem;">
+                            <i data-feather="chevron-left" class="w-6 h-6 text-indigo-700"></i>
+                        </button>
+                        <button aria-label="Next screenshot" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-70 hover:bg-opacity-90 rounded-full p-2 shadow-md transition duration-200 focus:outline-none" style="margin-right: 0.5rem;">
+                            <i data-feather="chevron-right" class="w-6 h-6 text-indigo-700"></i>
+                        </button>
+                        <!-- Carousel Images -->
+                        <div class="carousel-track flex gap-4 overflow-x-auto h-full w-full px-12 snap-x snap-mandatory hide-scrollbar items-center cursor-grab active:cursor-grabbing">
+                            <img src="screens/l1.jpg" alt="WordSage screenshot 1" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                            <img src="screens/l2.jpg" alt="WordSage screenshot 2" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                            <img src="screens/l3.jpg" alt="WordSage screenshot 3" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                            <img src="screens/l4.jpg" alt="WordSage screenshot 4" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                            <img src="screens/l5.jpg" alt="WordSage screenshot 5" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                            <img src="screens/l6.jpg" alt="WordSage screenshot 5" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                            <img src="screens/l7.jpg" alt="WordSage screenshot 5" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                            <img src="screens/l8.jpg" alt="WordSage screenshot 5" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Novo Hinário Adventista -->
+            <div id="dailydevotion" class="app-card bg-white rounded-2xl shadow-xl overflow-hidden mb-8 backdrop-blur-sm bg-opacity-90">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="p-8">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-indigo-700 mb-2">Novo Hinário Adventista</h3>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Swift</span>
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Xcode</span>
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">UIKit</span>
+                                </div>
+                            </div>
+                            <div class="bg-indigo-600 text-white px-4 py-2 rounded-lg">
+                                2022 - 2025
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-6">
+                            Hinário Adventista — Aplicativo oficial do Novo Hinário Adventista do Sétimo Dia, desenvolvido para oferecer a experiência mais completa de louvor e adoração.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-green-500 mr-2 mt-0.5"></i>
+                                <span>Letra, áudio e vídeo dos hinos;</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-green-500 mr-2 mt-0.5"></i>
+                                <span>Ajuste de fonte e formatação do texto;</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-green-500 mr-2 mt-0.5"></i>
+                                <span>Busca por número ou título;</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-green-500 mr-2 mt-0.5"></i>
+                                <span>Favoritos e playlists personalizáveis;</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-green-500 mr-2 mt-0.5"></i>
+                                <span>Reprodução com a tela bloqueada;</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-green-500 mr-2 mt-0.5"></i>
+                                <span>Downloads para acesso offline;</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-green-500 mr-2 mt-0.5"></i>
+                                <span>Suporte técnico integrado;</span>
+                            </li>
+                        </ul>
+                        <a href="https://apps.apple.com/us/app/novo-hin%C3%A1rio-adventista/id1629483421" target="_blank" class="inline-flex items-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300">
+                            <i data-feather="download" class="mr-2"></i> Download on App Store
+                        </a>
+                    </div>
+                    <div class="carousel-container relative h-96 md:h-auto">
+                        <!-- Carousel Arrows -->
+                        <button aria-label="Previous screenshot" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-70 hover:bg-opacity-90 rounded-full p-2 shadow-md transition duration-200 focus:outline-none" style="margin-left: 0.5rem;">
+                            <i data-feather="chevron-left" class="w-6 h-6 text-indigo-700"></i>
+                        </button>
+                        <button aria-label="Next screenshot" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-70 hover:bg-opacity-90 rounded-full p-2 shadow-md transition duration-200 focus:outline-none" style="margin-right: 0.5rem;">
+                            <i data-feather="chevron-right" class="w-6 h-6 text-indigo-700"></i>
+                        </button>
+                        <!-- Carousel Images -->
+                        <div class="carousel-track flex gap-4 overflow-x-auto h-full w-full px-12 snap-x snap-mandatory hide-scrollbar items-center cursor-grab active:cursor-grabbing">
+                            <img src="screens/h1.jpg" alt="Daily Devotion screenshot 1" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                            <img src="screens/h2.jpg" alt="Daily Devotion screenshot 1" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                            <img src="screens/h3.jpg" alt="Daily Devotion screenshot 1" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                            <img src="screens/h4.jpg" alt="Daily Devotion screenshot 1" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                            <img src="screens/h5.jpg" alt="Daily Devotion screenshot 1" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CPB Books -->
+            <div id="tapduel" class="app-card bg-white rounded-2xl shadow-xl overflow-hidden backdrop-blur-sm bg-opacity-90">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="p-8">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-indigo-700 mb-2">CPB Books</h3>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Swift</span>
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Xcode</span>
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">UIKit</span>
+                                </div>
+                            </div>
+                            <div class="bg-indigo-600 text-white px-4 py-2 rounded-lg">
+                                2015 - 2025
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-6">
+                            Leitor oficial de livros digitais da Casa Publicadora Brasileira. Permite baixar, ler e marcar trechos favoritos em um ambiente de leitura confortável e personalizável, com controle de fonte, brilho e outros ajustes. Uma experiência completa de leitura digital com qualidade.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-green-500 mr-2 mt-0.5"></i>
+                                <span>Leitor com marcação, e anotações</span>
+                            </li>
+                        </ul>
+                        <a href="https://apps.apple.com/us/app/cpb-books/id606223027" target="_blank" class="inline-flex items-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300">
+                            <i data-feather="download" class="mr-2"></i> Download on App Store
+                        </a>
+                    </div>
+                    <div class="carousel-container relative h-96 md:h-auto">
+                        <!-- Carousel Arrows -->
+                        <button aria-label="Previous screenshot" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-70 hover:bg-opacity-90 rounded-full p-2 shadow-md transition duration-200 focus:outline-none" style="margin-left: 0.5rem;">
+                            <i data-feather="chevron-left" class="w-6 h-6 text-indigo-700"></i>
+                        </button>
+                        <button aria-label="Next screenshot" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-70 hover:bg-opacity-90 rounded-full p-2 shadow-md transition duration-200 focus:outline-none" style="margin-right: 0.5rem;">
+                            <i data-feather="chevron-right" class="w-6 h-6 text-indigo-700"></i>
+                        </button>
+                        <!-- Carousel Images -->
+                        <div class="carousel-track flex gap-4 overflow-x-auto h-full w-full px-12 snap-x snap-mandatory hide-scrollbar items-center cursor-grab active:cursor-grabbing">
+                            <img src="screens/b1.jpg" alt="Tap Duel screenshot 1" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                            <img src="screens/b2.jpg" alt="Tap Duel screenshot 1" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                            <img src="screens/b3.jpg" alt="Tap Duel screenshot 1" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                            <img src="screens/b4.jpg" alt="Tap Duel screenshot 1" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                            <img src="screens/b5.jpg" alt="Tap Duel screenshot 1" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                            <img src="screens/b6.jpg" alt="Tap Duel screenshot 1" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+          <!-- Despesas -->
+           <div id="tapduel" class="app-card bg-white rounded-2xl shadow-xl overflow-hidden backdrop-blur-sm bg-opacity-90">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="p-8">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h3 class="text-2xl font-bold text-indigo-700 mb-2">CPB Despesas</h3>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">SwiftUI</span>
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Xcode</span>
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Firebase</span>
+                                    <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">SwiftData</span>
+                                    
+                                </div>
+                            </div>
+                            <div class="bg-indigo-600 text-white px-4 py-2 rounded-lg">
+                                2025
+                            </div>
+                        </div>
+                        <p class="text-gray-700 mb-6">
+                            Aplicativo corporativo para registro e gestão de despesas de colaboradores e parceiros externos. Permite a inserção e controle de custos de colaboradores que prestam serviços à Casa Publicadora Brasileira, otimizando o fluxo de prestação de contas e a transparência dos processos internos
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i data-feather="check-circle" class="text-green-500 mr-2 mt-0.5"></i>
+                                <span>Fotos e anexos de comprovantes</span>
+                            </li>
+                        </ul>
+                        <a href="https://apps.apple.com/us/app/despesas-cpb/id6474359666" target="_blank" class="inline-flex items-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300">
+                            <i data-feather="download" class="mr-2"></i> Download on App Store
+                        </a>
+                    </div>
+                    <div class="carousel-container relative h-96 md:h-auto">
+                        <!-- Carousel Arrows -->
+                        <button aria-label="Previous screenshot" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-70 hover:bg-opacity-90 rounded-full p-2 shadow-md transition duration-200 focus:outline-none" style="margin-left: 0.5rem;">
+                            <i data-feather="chevron-left" class="w-6 h-6 text-indigo-700"></i>
+                        </button>
+                        <button aria-label="Next screenshot" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white bg-opacity-70 hover:bg-opacity-90 rounded-full p-2 shadow-md transition duration-200 focus:outline-none" style="margin-right: 0.5rem;">
+                            <i data-feather="chevron-right" class="w-6 h-6 text-indigo-700"></i>
+                        </button>
+                        <!-- Carousel Images -->
+                        <div class="carousel-track flex gap-4 overflow-x-auto h-full w-full px-12 snap-x snap-mandatory hide-scrollbar items-center cursor-grab active:cursor-grabbing">
+                            <img src="screens/d1.jpg" alt="Tap Duel screenshot 1" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                            <img src="screens/d2.jpg" alt="Tap Duel screenshot 1" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                            <img src="screens/d3.jpg" alt="Tap Duel screenshot 1" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                            <img src="screens/d4.jpg" alt="Tap Duel screenshot 1" class="rounded-lg shadow-lg w-[85%] sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4 object-contain flex-shrink-0 snap-center" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="bg-white rounded-2xl shadow-xl p-8 mb-12 backdrop-blur-sm bg-opacity-90">
+            <h2 class="text-3xl font-bold text-indigo-600 mb-8 flex items-center">
+                <i data-feather="code" class="mr-3"></i> Tech & Tools
+            </h2>
+
+            <!-- Frontend / UI -->
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">📱 Frontend / UI (iOS & App Dev)</h3>
+            <div class="flex flex-wrap gap-3 mb-8">
+                <span class="skill-pill bg-orange-500 text-white px-4 py-2 rounded-full">SwiftUI</span>
+                <span class="skill-pill bg-blue-500 text-white px-4 py-2 rounded-full">UIKit</span>
+                <span class="skill-pill bg-blue-600 text-white px-4 py-2 rounded-full">SwiftData</span>
+                <span class="skill-pill bg-blue-500 text-white px-4 py-2 rounded-full">AVFoundation</span>
+            </div>
+
+            <!-- Backend & Databases -->
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">💾 Backend & Databases</h3>
+            <div class="flex flex-wrap gap-3 mb-8">
+                <span class="skill-pill bg-yellow-400 text-black px-4 py-2 rounded-full">Firebase</span>
+                <span class="skill-pill bg-blue-900 text-white px-4 py-2 rounded-full">SQLite</span>
+                <span class="skill-pill bg-indigo-900 text-white px-4 py-2 rounded-full">Realm</span>
+                <span class="skill-pill bg-blue-500 text-white px-4 py-2 rounded-full">CloudKit</span>
+                <span class="skill-pill bg-yellow-500 text-black px-4 py-2 rounded-full">Core Data</span>
+                <span class="skill-pill bg-yellow-500 text-black px-4 py-2 rounded-full">SQL Server</span>
+            </div>
+
+            <!-- Tools & Workflow -->
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">⚙️ Tools & Workflow</h3>
+            <div class="flex flex-wrap gap-3 mb-8">
+                <span class="skill-pill bg-blue-600 text-white px-4 py-2 rounded-full">Xcode</span>
+                <span class="skill-pill bg-blue-500 text-white px-4 py-2 rounded-full">Xcode Cloud</span>
+                <span class="skill-pill bg-blue-500 text-white px-4 py-2 rounded-full">TestFlight</span>
+                <span class="skill-pill bg-orange-600 text-white px-4 py-2 rounded-full">Git</span>
+                <span class="skill-pill bg-gray-900 text-white px-4 py-2 rounded-full">GitHub</span>
+                <span class="skill-pill bg-blue-600 text-white px-4 py-2 rounded-full">VS Code</span>
+            </div>
+
+            <!-- Languages -->
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">🖥️ Languages</h3>
+            <div class="flex flex-wrap gap-3">
+                <span class="skill-pill bg-orange-500 text-white px-4 py-2 rounded-full">Swift</span>
+                <span class="skill-pill bg-gray-800 text-white px-4 py-2 rounded-full">JSON</span>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-white rounded-2xl shadow-xl p-8 backdrop-blur-sm bg-opacity-90">
+            <h2 class="text-3xl font-bold text-indigo-600 mb-8 flex items-center">
+                <i data-feather="mail" class="mr-3"></i> Me envie uma mensagem
+            </h2>
+            <div class="flex flex-col items-start space-y-4">
+                <!-- Obfuscated email with subject picker -->
+                <div id="email-contact" class="flex items-center flex-wrap gap-3 group">
+                    <i data-feather="mail" class="w-5 h-5 mr-3 text-indigo-600 group-hover:text-indigo-800 transition-colors"></i>
+                    <button id="emailBtn" type="button" aria-label="Email me" class="text-indigo-600 hover:text-indigo-800 underline">Meu email</button>
+                    <button id="copyEmailBtn" type="button" class="text-gray-600 hover:text-gray-900 text-sm underline">Copie meu email</button>
+                    <noscript>
+                        <span>duanemsilva [at] gmail [dot] com</span>
+                    </noscript>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 mt-16 relative z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-2">Duane Silva</h3>
+                    <p class="text-gray-400">Desenvolvedor iOS</p>
+                </div>
+                <div class="flex space-x-6">
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Duane Silva. All rights reserved.</p>
+                <div class="mt-2">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Privacy Policy</a>
+                    <span class="mx-2">•</span>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Vanta.js background
+        VANTA.GLOBE({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x4f46e5,
+            backgroundColor: 0xf9fafb,
+            size: 1.00
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Carousel functionality: arrows, snapping, drag/swipe, responsive step
+        document.querySelectorAll('.carousel-container').forEach(container => {
+            const track = container.querySelector('.carousel-track');
+            const prevBtn = container.querySelector('button:first-of-type');
+            const nextBtn = container.querySelector('button:last-of-type');
+
+            function getScrollAmount() {
+                return Math.round(container.clientWidth * 0.8);
+            }
+
+            function updateButtons() {
+                const max = track.scrollWidth - track.clientWidth - 1;
+                const atStart = track.scrollLeft <= 0;
+                const atEnd = track.scrollLeft >= max;
+                prevBtn.disabled = atStart;
+                nextBtn.disabled = atEnd;
+                prevBtn.classList.toggle('opacity-50', atStart);
+                prevBtn.classList.toggle('cursor-not-allowed', atStart);
+                nextBtn.classList.toggle('opacity-50', atEnd);
+                nextBtn.classList.toggle('cursor-not-allowed', atEnd);
+            }
+
+            // Button clicks
+            prevBtn.addEventListener('click', () => {
+                track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+            });
+            nextBtn.addEventListener('click', () => {
+                track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+            });
+
+            // Drag/swipe support via Pointer Events
+            let isDown = false;
+            let startX = 0;
+            let startScroll = 0;
+
+            track.addEventListener('pointerdown', e => {
+                isDown = true;
+                startX = e.clientX;
+                startScroll = track.scrollLeft;
+                track.classList.add('select-none');
+                try { track.setPointerCapture(e.pointerId); } catch {}
+            });
+            track.addEventListener('pointermove', e => {
+                if (!isDown) return;
+                const dx = e.clientX - startX;
+                track.scrollLeft = startScroll - dx;
+            });
+            ['pointerup','pointercancel','pointerleave'].forEach(type => {
+                track.addEventListener(type, e => {
+                    isDown = false;
+                    try { track.releasePointerCapture(e.pointerId); } catch {}
+                    track.classList.remove('select-none');
+                });
+            });
+
+            // Keep buttons state in sync
+            track.addEventListener('scroll', updateButtons, { passive: true });
+            window.addEventListener('resize', updateButtons);
+            updateButtons();
+        });
+        // Email obfuscation + subject picker (prevents plain-text email in markup)
+        (function () {
+            // Reverse-encoded to deter basic scrapers
+            const u = 'avlismenaud'.split('').reverse().join(''); 
+            const d = 'moc.liamg'.split('').reverse().join('');  // 'gmail.com'
+            const email = `${u}@${d}`;
+
+            const subjectSelect = document.getElementById('emailSubject');
+            const emailBtn = document.getElementById('emailBtn');
+            const copyBtn = document.getElementById('copyEmailBtn');
+
+            if (emailBtn) {
+                emailBtn.addEventListener('click', () => {
+                    const subj = subjectSelect && subjectSelect.value ? `?subject=${subjectSelect.value}` : '';
+                    window.location.href = `mailto:${email}${subj}`;
+                });
+            }
+
+            if (copyBtn && navigator.clipboard) {
+                copyBtn.addEventListener('click', async () => {
+                    try {
+                        await navigator.clipboard.writeText(email);
+                        const orig = copyBtn.textContent;
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => (copyBtn.textContent = orig), 1500);
+                    } catch (e) {
+                        // Fallback: reveal email so it can be copied manually
+                        copyBtn.textContent = email;
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
